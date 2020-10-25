@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "976421512528",
+    "firebase_url": "https://chats-fb2cb.firebaseio.com",
+    "project_id": "chats-fb2cb",
+    "storage_bucket": "chats-fb2cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976421512528:android:46e6576a293da7ededb855",
+        "android_client_info": {
+          "package_name": "com.example.FlutterChat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976421512528-d53in0mtkr4pfkblt1m3ejn4vvv03sp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT0okQ34y3zA95GuVoDpLtJE65R2x07xk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976421512528-d53in0mtkr4pfkblt1m3ejn4vvv03sp9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
