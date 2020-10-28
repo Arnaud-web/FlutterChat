@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class AuthForm extends StatefulWidget {
   AuthForm(this.submitFn, this.isLoading);
-  final void Function(String email, String username, String password,
+  final void Function(String email, String username, String password, File image,
       bool isLogin, BuildContext ctx) submitFn;
   final bool isLoading;
   @override
@@ -20,17 +20,18 @@ class _AuthFormState extends State<AuthForm> {
   var _isLogin = true;
   File _userImageFile;
 
-  void _pickedImage( File image) {
+  void _pickedImage(File image) {
     _userImageFile = image;
   }
+
   void _trySubmit() {
     final isValide = _formKey.currentState.validate();
     FocusScope.of(context).unfocus();
-    if (_userImageFile == null && !_isLogin ){
-      Scaffold.of(context).showSnackBar(
-        SnackBar(content: Text("Please pick an image"),
-        backgroundColor: Theme.of(context).errorColor,)
-      );
+    if (_userImageFile == null && !_isLogin) {
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text("Please pick an image"),
+        backgroundColor: Theme.of(context).errorColor,
+      ));
       return;
     }
     if (isValide) {
@@ -39,7 +40,7 @@ class _AuthFormState extends State<AuthForm> {
       print(_userName);
       print(_userPassword);
 
-      widget.submitFn(_userEmail.trim(), _userName.trim(), _userPassword.trim(),
+      widget.submitFn(_userEmail.trim(), _userName.trim(), _userPassword.trim(),_userImageFile,
           _isLogin, context);
     }
   }
@@ -56,8 +57,7 @@ class _AuthFormState extends State<AuthForm> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                if (!_isLogin)
-                UserImagePicker(_pickedImage),
+                if (!_isLogin) UserImagePicker(_pickedImage),
                 TextFormField(
                   key: ValueKey("email"),
                   validator: (value) {
