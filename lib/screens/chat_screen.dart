@@ -1,6 +1,5 @@
 import 'package:FlutterChat/widgets/chat/messages.dart';
 import 'package:FlutterChat/widgets/chat/new_message.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +11,7 @@ class ChatScreen extends StatelessWidget {
         title: Text("FlutterChat"),
         actions: [
           DropdownButton(
+              underline: Container(),
               icon: Icon(
                 Icons.more_vert,
                 color: Theme.of(context).primaryIconTheme.color,
@@ -66,8 +66,8 @@ class ChatScreen extends StatelessWidget {
       //   },
       // ),
 
-      //test connection 
-      
+      //test connection
+
       // floatingActionButton: FloatingActionButton(
       //   child: Icon(Icons.add),
       //   onPressed: () {
