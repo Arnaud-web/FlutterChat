@@ -15,10 +15,10 @@ class MessageBubble extends StatelessWidget {
           decoration: BoxDecoration(
               color: isMe ? Colors.purple : Theme.of(context).accentColor,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
-                bottomLeft: !isMe ? Radius.circular(0) : Radius.circular(12),
-                bottomRight: !isMe ? Radius.circular(0) : Radius.circular(12),
+                topLeft: isMe ? Radius.circular(16) : Radius.circular(30),
+                topRight: isMe ?  Radius.circular(30) : Radius.circular(16),
+                bottomLeft: isMe ? Radius.circular(30) : Radius.circular(0),
+                bottomRight: isMe ? Radius.circular(0) : Radius.circular(30),
               )),
           width: 140,
           padding: EdgeInsets.symmetric(
