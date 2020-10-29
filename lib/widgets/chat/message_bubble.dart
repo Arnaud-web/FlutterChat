@@ -45,7 +45,7 @@ class MessageBubble extends StatelessWidget {
                     left: isMe ? 0 : 10,
                   ),
                   child: Text(
-                    "$userName \n$message",
+                    message,
                     style: TextStyle(
                       color: isMe ? Colors.white : Colors.white,
                       fontSize: 16,

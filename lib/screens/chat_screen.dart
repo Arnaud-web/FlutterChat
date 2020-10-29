@@ -4,6 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatelessWidget {
+  // ChatScreen(this.userId);
+  // ChatScreen(this.userId);
+  //   final String userId;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,9 +44,9 @@ class ChatScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: Messages(),
+              child: Messages(""),
             ),
-            NewMessage(),
+            NewMessage(""),
           ],
         ),
       ),

@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class NewMessage extends StatefulWidget {
+  NewMessage(this.userIdDest);
+  final String userIdDest;
   @override
   _NewMessageState createState() => _NewMessageState();
 }
@@ -19,7 +21,8 @@ class _NewMessageState extends State<NewMessage> {
       'createdAt': Timestamp.now(),
       'userId': user.uid,
       'username': userData['username'],
-      'userImage': userData['image_url'], 
+      'userImage': userData['image_url'],
+      'userIdDest': user.uid+widget.userIdDest, 
     });
     _controller.clear();
   }

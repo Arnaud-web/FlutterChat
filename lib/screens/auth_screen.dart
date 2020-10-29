@@ -49,6 +49,7 @@ class _AuthScreenState extends State<AuthScreen> {
           'username': username,
           'email': email,
           'image_url': url,
+          'userId': authResult.user.uid,
         });
         print("ok create");
       }

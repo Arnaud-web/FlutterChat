@@ -4,6 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Messages extends StatelessWidget {
+  Messages(this.userId);
+  final String userId;
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -28,13 +30,20 @@ class Messages extends StatelessWidget {
               return ListView.builder(
                   reverse: true,
                   itemCount: chatDocs.length,
-                  itemBuilder: (ctx, index) => MessageBubble(
+                  itemBuilder: (ctx, index) {
+                    var _userIdDest = userId+futureSnapshot.data.uid;
+                    var _userIdDest1 = futureSnapshot.data.uid+userId;
+                    if ( chatDocs[index]['userIdDest']==_userIdDest || chatDocs[index]['userIdDest']==_userIdDest1  ) {
+                      return MessageBubble(
                         chatDocs[index]['text'],
                         chatDocs[index]['username'],
                         chatDocs[index]['userImage'],
                         chatDocs[index]['userId'] == futureSnapshot.data.uid,
                         key: ValueKey(chatDocs[index].documentID),
-                      ));
+                      );  
+                    }
+                    return Text("");
+                    });
             });
       },
     );

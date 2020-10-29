@@ -28,7 +28,7 @@ class Users extends StatelessWidget {
                   // reverse: true,
                   itemCount: chatDocs.length,
                   itemBuilder: (ctx, index) {
-                    return UsersBubble(chatDocs[index]['username'],chatDocs[index]['image_url']);
+                    return UsersBubble(chatDocs[index]['username'],chatDocs[index]['image_url'],chatDocs[index]['userId']);
                   });
             });
       },
